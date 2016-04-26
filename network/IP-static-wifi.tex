@@ -1,0 +1,58 @@
+\chapter{Mạng Internet với Raspberry Pi}
+\section{Kết nối internet với dây mạng LAN}
+Trên Raspberry Pi có hổ trợ cổng Ethernet, chúng ta có thể kết nối dây mạng trực tiếp vào đây.
+\section{Kết nối internet với USB Wifi}
+Trong phần này, mình sử dụng USB Wifi TP Link 725N
+\subsection{Cài đặt Drive}
+Tham khảo tại: \verb|https://www.raspberrypi.org/forums/viewtopic.php?p=462982|
+
+Thực hiện theo các bước sau:
+\begin{itemize}
+\item Xác định phiên bản hệ điều hành Raspbain:
+\begin{lstlisting}[language=make]
+$ uname -a
+Linux raspberrypi 4.1.13+ #826 PREEMPT Fri Nov 13 20:13:22 GMT 2015 armv6l GNU/Linux
+\end{lstlisting}
+Trong ví dụ trên, phiên bản hệ điều hành là \verb|4.1.13+ #826|. 
+\item Vào địa chỉ bên dưới để tải drive:
+
+\verb|https://www.raspberrypi.org/forums/viewtopic.php?p=462982|
+\item Cài đặt drive, thực hiện các lệnh bên dưới:
+\begin{lstlisting}[language=make]
+wget https://dl.dropboxusercontent.com/u/80256631/8188eu-201xyyzz.tar.gz
+tar -zxvf 8188eu-201xyyzz.tar.gz
+sudo install -p -m 644 8188eu.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+sudo insmod /lib/modules/$(uname -r)/kernel/drivers/net/wireless/8188eu.ko
+sudo depmod -a
+\end{lstlisting}
+Đối với Raspberry Pi 2, chúng ta chỉ cần thực hiện 2 lệnh sau:
+\begin{lstlisting}[language=make]
+tar xzf 8188eu-2015yyzz.tar.gz
+./install.sh
+\end{lstlisting}
+Với \verb|8188eu-201xyyzz.tar.gz| là drive phù hợp với phiên bản hệ điều hành của bạn.
+
+Bạn có thể tải drive từ máy tính rồi chép vào Raspberry Pi để cài đặt (cách này dùng cho Pi chưa được kết nối với Internet).
+\end{itemize}
+\subsection{Cài đặt địa chỉ IP tĩnh}
+Tham khảo tại địa chỉ: 
+
+\begin{footnotesize}
+\verb|http://weworkweplay.com/play/automatically-connect-a-raspberry-pi-to-a-wifi-network/|
+\end{footnotesize}\\
+
+Ta sửa đổi nội dung của 2 tập tin dưới đây:
+\begin{itemize}
+\item Tập tin: \verb|interfaces|, mở tập tin:
+\begin{lstlisting}[language=bash]
+$ sudo nano /etc/network/interfaces
+\end{lstlisting}
+và thay đổi nội dung như sau:
+\lstinputlisting[language=make]{interfaces}
+\item Tập tin: \verb|wpa_supplicant.conf|,  mở tập tin:
+\begin{lstlisting}[language=bash]
+$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+\end{lstlisting}
+và thay đổi nội dung như sau:
+\lstinputlisting[language=make]{wpa_supplicant.conf}
+\end{itemize}
