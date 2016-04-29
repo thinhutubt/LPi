@@ -15,6 +15,6 @@
 \contentsline {chapter}{\numberline {4}Ch\IeC {\d a}y ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh Python tr\IeC {\^e}n Raspberry Pi}{10}{chapter.4}
 \contentsline {section}{\numberline {4.1}Python tr\IeC {\^e}n Raspberry Pi}{10}{section.4.1}
 \contentsline {section}{\numberline {4.2}T\IeC {\d \uhorn } \IeC {\dj }\IeC {\d \ocircumflex }ng ch\IeC {\d a}y m\IeC {\d \ocircumflex }t ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh python sau khi Reboot}{10}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}S\IeC {\h \uhorn } d\IeC {\d u}ng crontab}{10}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}S\IeC {\h \uhorn } d\IeC {\d u}ng cron}{10}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}S\IeC {\h \uhorn } d\IeC {\d u}ng profile}{12}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}S\IeC {\h \uhorn } d\IeC {\d u}ng cron k\IeC {\'\ecircumflex }t h\IeC {\d \ohorn }p v\IeC {\'\ohorn }i t\IeC {\d a}o file .sh}{12}{subsection.4.2.3}
